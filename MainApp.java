@@ -28,10 +28,24 @@ public class MainApp {
                 case "+":
                     operate = new Add();
                     break;
+                case "-":
+                    operate = new Subtract();
+                    break;
+                case "*":
+                    operate = new Multiply();
+                    break;
+                case "/":
+                    operate = new Divide();
+                    break;
                 default:
                     continue;
             }
 
+            Double num = Double.parseDouble(numbers.poll());
+
+            res = operate.getResult(res, num);
         }
+
+        System.out.println(res);
     }
 }
